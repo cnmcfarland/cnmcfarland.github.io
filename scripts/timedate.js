@@ -17,6 +17,15 @@ function doDate() {
   var clock = new Date();
   var now = new Date();
 
+  // Get the hour and determine AM or PM
+  var hours = now.getHours();
+  var ampm = hours >= 12 ? "PM" : "AM";
+
+  // Convert hours to 12-hour format
+  var hour12 = hours % 12;
+  hour12 = hour12 ? hour12 : 12; // The hour '0' should be '12'
+
+  // Format the time string
   str +=
     months[clock.getMonth()] +
     " " +
@@ -25,11 +34,15 @@ function doDate() {
     ", " +
     clock.getFullYear() +
     " | " +
-    ("0" + (now.getHours() % 12) || 12).slice(-2) +
+    ("0" + hour12).slice(-2) +
     ":" +
-    ("0" + now.getMinutes()).slice(-2);
+    ("0" + now.getMinutes()).slice(-2) +
+    " " +
+    ampm;
+
   document.getElementById("date").innerHTML = str;
 }
+
 setInterval(doDate, 1000);
 doDate();
 

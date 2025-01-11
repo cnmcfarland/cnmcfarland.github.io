@@ -52,11 +52,6 @@ ul {
   font-weight: bold;
 }
 
-.image {
-  max-width: 250px;
-  float: left;
-}
-
 .bottom {
   position: fixed;
   bottom: 0;
@@ -73,27 +68,36 @@ ul {
 }
 
 /* IDs */
+/* Adjust the main window */
 #main_window {
   background-color: var(--fg);
-  min-width: 800px;
-  max-width: fit-content;
-  margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  transition: all 0.25s;
+  display: flex; /* Use flexbox to align the image and content side by side */
+  align-items: flex-start; /* Align items to the top */
+  box-sizing: border-box;
+  width: fit-content; /* Box size adjusts based on content */
 }
 
+/* Adjust the image */
+.image {
+  width: 250px; /* Set a fixed size or use natural width */
+  margin: 0; /* No margin around the image */
+  display: block; /* Block-level element */
+}
+
+/* Content area */
 #content {
+  padding-left: 20px; /* Add padding-left to ensure text doesn't touch the image */
   padding-top: 0px;
-  margin-left: 275px;
+  transition: margin-left 0.25s ease; /* Smooth transition for margin change */
 }
 
 #links_container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Prevent wrapping */
   margin-left: -1.8%;
 }
 
@@ -102,6 +106,7 @@ a {
   color: var(--font);
   text-decoration: none;
   transition: all 0.4s;
+  white-space: nowrap; /* Prevent text inside list items from wrapping */
 }
 
 #links_container a:hover {
