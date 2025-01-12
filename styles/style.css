@@ -69,6 +69,8 @@ ul {
 
 /* IDs */
 /* Adjust the main window */
+/* IDs */
+/* Adjust the main window */
 #main_window {
   background-color: var(--fg);
   position: absolute;
@@ -79,6 +81,8 @@ ul {
   align-items: flex-start; /* Align items to the top */
   box-sizing: border-box;
   width: fit-content; /* Box size adjusts based on content */
+  border-radius: 15px; /* Round the corners with 15px radius */
+  overflow: hidden; /* Ensures child elements respect the rounded corners */
 }
 
 /* Adjust the image */
