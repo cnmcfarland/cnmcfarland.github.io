@@ -123,6 +123,16 @@ div#date {
   margin-left: 0.1%;
 }
 
+.light-mode-toggle {
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.light-mode-toggle:hover {
+  opacity: 1;
+  transition: all 0.4s;
+}
+
 /* DO NOT EDIT BELOW THIS LINE */
 /* Transitions */
 #fader {
